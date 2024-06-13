@@ -1,0 +1,26 @@
+.left, .right{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-style: solid;
+}
+
+div{
+    background-color:#D9EEE1;
+}
+
+input, textarea{
+    width: 300px;
+}
+div.mycontainer {
+    width:100%;
+    overflow:auto;
+  }
+  div.mycontainer div {
+    float:left;
+  }
+
+  .margin-inherit{
+    margin: inherit;
+  }
