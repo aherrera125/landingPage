@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2nd Assignment</title>
-    <link rel="stylesheet" href="styles.css">    
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -13,40 +14,35 @@
         <div id="leftDiv" class="left">
             <div class="margin-inherit">
                 <h2>Landing page - Promotion</h2>
-            </div>            
+            </div>
         </div>
         <div id="rightDiv" class="right">
             <div class="margin-inherit">
                 <form>
-                    <label>First name:</label><br><br>
+                    <label>First name:</label><br>
                     <input type="text" id="fname" name="fname" value=""><br><br>
 
-                    <label>Last name:</label><br><br>
+                    <label>Last name:</label><br>
                     <input type="text" id="lname" name="lname" value=""><br><br>
 
-                    <label>Email:</label><br><br>
+                    <label>Email:</label><br>
                     <input type="text" id="email" name="email" value=""><br><br>
 
                     <label>Gender:</label>
-                    <select>
+                    <select id="gender">
                         <option value="Select" selected>Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                     <br><br>
 
+                    <label>Message:</label><br>
                     <textarea id="message" name="message" rows="10" cols="30"></textarea><br><br>
-                    <button type="button" onclick="submit()">Submit</button>
-                    <!--<input type="submit" value="Submit" onclick="submit()">-->
+                    <button type="button" onclick="sendData()">Send</button>
                 </form>
             </div>
-
-
             <p></p>
         </div>
-
     </div>
-
 </body>
-<script src="main.js"></script>
 </html>
