@@ -1,30 +1,39 @@
-function sendData() {
-    let fName = document.getElementById("fname").value;
-    let lName = document.getElementById("lname").value;
-    let eMail = document.getElementById("email").value;
-    let gender = document.getElementById("gender").value;
-    let tMessage = document.getElementById("message").value;
+var fName = document.getElementById("fname");
+var lName = document.getElementById("lname");
+var eMail = document.getElementById("email");
+var gender = document.getElementById("gender");
+var tMessage = document.getElementById("message");
 
-    if (eMail.includes("@")) {
-        if (eMail.length > 3 && eMail.length < 20) {
-            if (fName && lName) {
-                alert("Email valid. Name: " + fName + " " + lName + ". Gender: " + gender + ". Message: " + tMessage);
-                clear();
-            } else {
-                alert("Complete data required");
-            }
+const send = document.getElementById("send");
+
+send.addEventListener("click", () => {    
+    if (emailValidation(eMail)) {
+        if (fullNameValidation(fName, lName)) {
+            alert("Email valid. Name: " + fName.value + " " + lName.value + ". Gender: " + gender.value + ". Message: " + tMessage.value);
+            clear();
         } else {
-            alert("Name longer than 3 letters, and less than 20 letters");
+            alert("Full name longer than 3 letters, and less than 20 letters");
         }
     } else {
         alert("Email no valid");
     }
+});
+
+function emailValidation(email) {
+    return email.value.includes("@");
+}
+
+function fullNameValidation(fName, lName) {
+    if (fName.value.length > 3 && fName.value.length < 20 && lName.value.length > 3 && lName.value.length < 20)
+        return true
+    else
+        return false
 }
 
 function clear() {
-    document.getElementById("fname").value = "";
-    document.getElementById("lname").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("gender").value = "Select";
-    document.getElementById("message").value = "";
+    fName.value = "";
+    lName.value = "";
+    eMail.value = "";
+    gender.value = "Select";
+    tMessage.value = "";
 }
